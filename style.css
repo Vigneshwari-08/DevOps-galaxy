@@ -1,0 +1,110 @@
+body{
+margin:0;
+background:#020412;
+color:white;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+}
+
+/* title */
+
+.title{
+margin-top:50px;
+font-size:52px;
+}
+
+.subtitle{
+color:#9aa4c0;
+margin-bottom:40px;
+}
+
+/* tool grid */
+
+.tools{
+display:grid;
+grid-template-columns:repeat(3,200px);
+justify-content:center;
+gap:60px;
+margin-top:60px;
+}
+
+/* bubble */
+
+.tool{
+width:150px;
+height:150px;
+border-radius:50%;
+background:linear-gradient(145deg,#0c1c4d,#050c28);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+cursor:pointer;
+position:relative;
+transition:all .35s ease;
+box-shadow:
+0 0 20px rgba(0,140,255,.3),
+inset 0 0 20px rgba(0,140,255,.2);
+}
+
+/* hover animation */
+
+.tool:hover{
+transform:translateY(-10px) scale(1.1);
+box-shadow:
+0 0 30px rgba(0,200,255,.9),
+inset 0 0 25px rgba(0,200,255,.6);
+}
+
+/* tool label */
+
+.tool::after{
+content:attr(data-name);
+position:absolute;
+bottom:-35px;
+font-size:16px;
+color:#d0e4ff;
+opacity:0;
+transition:.3s;
+}
+
+.tool:hover::after{
+opacity:1;
+}
+
+/* info section */
+
+#infoBox{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:10;
+}
+
+/* info card */
+
+.card{
+background:#3c57c4;
+padding:30px;
+width:450px;
+border-radius:12px;
+border:1px solid #00c8ff;
+box-shadow:0 0 25px rgba(0,200,255,.5);
+animation:fade .4s ease;
+}
+
+.card h2{
+margin-top:0;
+color:#00d9ff;
+}
+
+.card p{
+color:#cfd8ff;
+line-height:1.6;
+}
+
+@keyframes fade{
+from{opacity:0;transform:scale(.9)}
+to{opacity:1;transform:scale(1)}
+}
